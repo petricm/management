@@ -83,7 +83,7 @@ jobs:
         run: docker images
       - name: login and push
         env:
-          - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
+          deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ ! -z ${deploy_secret} ]; then
             echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin;
@@ -108,7 +108,7 @@ jobs:
         run: docker images
       - name: login and push
         env:
-          - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
+          deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ ! -z ${deploy_secret} ]; then
             echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin;
@@ -133,7 +133,7 @@ jobs:
         run: docker images
       - name: login and push
         env:
-          - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
+          deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ ! -z ${deploy_secret} ]; then
             echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin;
@@ -162,7 +162,7 @@ jobs:
         run: docker images
       - name: login and push
         env:
-          - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
+          deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ ! -z ${deploy_secret} ]; then
             echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin;
