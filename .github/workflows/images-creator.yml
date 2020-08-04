@@ -9,6 +9,8 @@ name: Create images
 
 on:
   push:
+    branches:
+      - master
   schedule:
     # every Sunday
     - cron:  '0 0 * * 0'
