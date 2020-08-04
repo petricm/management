@@ -31,7 +31,7 @@ jobs:
       - name: show
         run: docker images
       - name: login and push
-        end:
+        env:
           - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ -z ${deploy_secret} ]; then
@@ -57,7 +57,7 @@ jobs:
       - name: show
         run: docker images
       - name: login and push
-        end:
+        env:
           - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ -z ${deploy_secret} ]; then
@@ -82,7 +82,7 @@ jobs:
       - name: show
         run: docker images
       - name: login and push
-        end:
+        env:
           - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ -z ${deploy_secret} ]; then
@@ -107,7 +107,7 @@ jobs:
       - name: show
         run: docker images
       - name: login and push
-        end:
+        env:
           - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ -z ${deploy_secret} ]; then
@@ -132,7 +132,7 @@ jobs:
       - name: show
         run: docker images
       - name: login and push
-        end:
+        env:
           - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ -z ${deploy_secret} ]; then
@@ -161,7 +161,7 @@ jobs:
       - name: show
         run: docker images
       - name: login and push
-        end:
+        env:
           - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ -z ${deploy_secret} ]; then
