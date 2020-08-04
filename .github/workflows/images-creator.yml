@@ -22,11 +22,12 @@ jobs:
       - name: login and push
         env:
           deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
-        run: (if [ -z ${deploy_secret} ]; then
-            echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
-            echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com --username ${{ github.actor }} --password-stdin
-            docker push diracgrid/dirac-distribution:latest
-            docker push docker.pkg.github.com/diracgrid/management/dirac-distribution:latest
-          else 
-            echo "Skipping deploy: no secrets present"
-          fi)
+        run: (if [ -z ${deploy_secret} ]
+              then
+                echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+                echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com --username ${{ github.actor }} --password-stdin
+                docker push diracgrid/dirac-distribution:latest
+                docker push docker.pkg.github.com/diracgrid/management/dirac-distribution:latest
+              else
+                 echo "Skipping deploy, no secrets present"
+              fi)
