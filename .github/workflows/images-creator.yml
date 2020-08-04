@@ -17,8 +17,6 @@ jobs:
   # Image for running dirac-distribution
   dirac-distribution:
     runs-on: ubuntu-latest
-    env:
-      - deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
     steps:
       - uses: actions/checkout@v2
       - name: build
@@ -33,6 +31,8 @@ jobs:
       - name: show
         run: docker images
       - name: login and push
+        env:
+          deploy_secret: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           if [ -z ${deploy_secret} ]
           then
